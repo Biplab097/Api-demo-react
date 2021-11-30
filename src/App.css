@@ -1,5 +1,10 @@
 .App {
   text-align: center;
+  background-image: linear-gradient(teal, #5ab8cc);
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  padding: 10px;
+  font-style: italic;
+  
 }
 
 .App-logo {
@@ -38,7 +43,5 @@
 }
 
 .rr{
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  align-items: center;
 }
