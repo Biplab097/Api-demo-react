@@ -6,12 +6,14 @@ import './main.css';
 import TableProject from './TableProject';
 import TableTenent from './TableTenent';
 import TableSchedule from './TableSchedule';
+import TableCost from './TableCost';
 
 export default function Main(){
     
     const [tenentClicked,setTenentClicked] = useState(false)
     const [projectClicked,setProjectClicked] = useState(false)
     const [scheduleClicked,setScheduleClicked] = useState(false)
+    const [costClicked,setCostClicked] = useState(false)
     // useEffect(() => {
     //     fetchData().then(apiData => {
     //         // console.log("apiData "+apiData);
@@ -26,24 +28,34 @@ export default function Main(){
         setProjectClicked(true)
         setTenentClicked(false)
         setScheduleClicked(false)
+        setCostClicked(false)
     }
     const tenentButtonClicked = () => {
         setProjectClicked(false)
         setTenentClicked(true)
         setScheduleClicked(false)
+        setCostClicked(false)
     }
     const scheduleButtonClicked =() =>{
         setProjectClicked(false)
         setTenentClicked(false)
         setScheduleClicked(true)
+        setCostClicked(false)
+    }
+    const costButtonClicked =() =>{
+        setProjectClicked(false)
+        setTenentClicked(false)
+        setScheduleClicked(false)
+        setCostClicked(true)
     }
     const head = ['description', 'planned_start_date','planned_end_date'];
     return (
         <div class="main">
-            
-            <button onClick={tenentButtonClicked}>Tenent</button>&nbsp;&nbsp;&nbsp;
-            <button onClick={projectButtonClicked}>Projects</button>&nbsp;&nbsp;&nbsp;
-            <button onClick={scheduleButtonClicked}>Schedule</button>
+            <br/>
+            <button className="button" onClick={tenentButtonClicked}>Tenent</button>&nbsp;&nbsp;&nbsp;
+            <button className="button" onClick={projectButtonClicked}>Projects</button>&nbsp;&nbsp;&nbsp;
+            <button className="button" onClick={scheduleButtonClicked}>Schedule</button>&nbsp;&nbsp;&nbsp;
+            <button className="button" onClick={costButtonClicked}>Cost</button>
             <br/>
             {/* <table class="table">
                 <thead class>
@@ -67,6 +79,7 @@ export default function Main(){
             {projectClicked && <TableProject/>}
             {tenentClicked && <TableTenent/>}
             {scheduleClicked && <TableSchedule/>}
+            {costClicked && <TableCost/>}
 
             
             
